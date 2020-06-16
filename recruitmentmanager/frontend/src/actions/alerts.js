@@ -1,15 +1,15 @@
 import { CREATE_ALERT, GET_ERRORS } from './types';
 
-export const createAlert = (alert) => {
+export const createAlert = (message) => {
   return {
     type: CREATE_ALERT,
-    payload: alert
+    payload: message
   };
 };
 
-export const returnErrors = (alert, status) => {
+export const returnErrors = (message, status) => {
   return {
     type: GET_ERRORS,
-    payload: { alert, status}
+    payload: { message, status}
   };
 };

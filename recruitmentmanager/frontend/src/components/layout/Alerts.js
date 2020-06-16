@@ -17,7 +17,9 @@ export class Alerts extends Component {
       if (error.message.last_name) alert.error(`Error in Last Name Field: ${error.message.last_name.join()}`);
       if (error.message.age) alert.error(`Error in Age Field: ${error.message.age.join()}`);
       if (error.message.email) alert.error(`Error in Email Field: ${error.message.email.join()}`);
-      if (error.message.phone) alert.error(`Error in Phone Number Field: ${error.message.phone.join()}`);
+      if (error.message.phone_number) alert.error(`Error in Phone Number Field: ${error.message.phone_number.join()}`);
+      if (error.message.referral_source) alert.error(`Error in Referral Source Field: ${error.message.referral_source.join()}`);
+      if (error.message.reason_interested) alert.error(`Error in Reason Interested Source Field: ${error.message.reason_interested.join()}`);
       if (error.message.notes) alert.error(`Error in Notes Field: ${error.message.notes.join()}`);
       if (error.message.non_field_errors) alert.error(error.message.non_field_errors.join());
       if (error.message.username) alert.error(error.message.username.join());

@@ -1,13 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from phone_field import PhoneField
 
 class Recruit(models.Model):
   first_name = models.CharField(max_length=50)
   last_name = models.CharField(max_length=50)
   age = models.IntegerField
   email = models.EmailField(max_length=100, unique=True)
-  phone_number = models.IntegerField
+  phone_number = PhoneField(blank=True)
   referral_source = models.CharField(max_length=100)
   reason_interested = models.CharField(max_length=100)
   notes = models.CharField(max_length=300)

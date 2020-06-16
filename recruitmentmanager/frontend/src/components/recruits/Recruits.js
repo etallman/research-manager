@@ -18,8 +18,8 @@ export class Recruits extends Component {
     return (
       <Fragment>
         <h2>Potential Study Recruits</h2>
-        <table className="table table-striped">
-          <thead>
+        <table className="table table-hover">
+          <thead className="thead-dark">
             <tr>
               <th>ID</th>
               <th>FirstName</th>

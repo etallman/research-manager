@@ -5,7 +5,7 @@ import { GET_RECRUITS, DELETE_RECRUIT, ADD_RECRUIT} from './types';
 
 export const getRecruits = () => (dispatch, getState) => {
   axios
-  .get('/manager/recruits', tokenConfig(getState))
+  .get('/api/recruits/', tokenConfig(getState))
     .then((res) => {
       dispatch({
         type: GET_RECRUITS,
@@ -17,7 +17,7 @@ export const getRecruits = () => (dispatch, getState) => {
   
 export const deleteRecruit = (id) => (dispatch, getState) => {
       axios
-      .delete(`/manager/recruits/${id}`, tokenConfig(getState))
+      .delete(`/api/recruits/${id}/`, tokenConfig(getState))
         .then((res) => {
           dispatch(createAlert({ deleteRecruit: 'Study Recruit Deleted' }))
           dispatch({
@@ -29,8 +29,9 @@ export const deleteRecruit = (id) => (dispatch, getState) => {
 }
 
 export const addRecruit = (recruit) => (dispatch, getState) => {
+  console.log('hi')
   axios
-  .post(`/manager/recruits`, recruit, tokenConfig(getState))
+  .post(`/api/recruits/`, recruit, tokenConfig(getState))
     .then((res) => {
       dispatch(createAlert({ addRecruit: 'Study Recruit Added'}))
       dispatch({

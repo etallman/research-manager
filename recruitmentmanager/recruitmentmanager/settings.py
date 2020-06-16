@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'recruits',
     'rest_framework',
     'frontend',
-    'useraccounts',
+    'accounts',
     'knox',
+    'phone_field'
 ]
 
 REST_FRAMEWORK = {

@@ -29,7 +29,7 @@ export class Header extends Component {
       </ul>
     )
     const guestLinks = (
-      <ul className="navbar-nav mr-auto">
+      <ul className="nav nav-tabs mr-auto">
         <li className="nav-item">
           <Link to="/login" className="nav-link">
             Login
