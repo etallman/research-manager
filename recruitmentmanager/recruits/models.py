@@ -30,3 +30,12 @@ class Cohort(models.Model):
 
   def is_upperclass(self):
     return self.cohort_group in {self.CONTROL, self.EXPERIMENTAL}
+
+class Contact(models.Model):
+  recruit = models.ForeignKey(Recruit, on_delete=models.CASCADE)
+  first_contact_date = models.DateField(auto_now=False)
+  first_contact_time = models.TimeField(auto_now=False)
+  end_contact_date = models.DateField(auto_now=False)
+  end_contact_time = models.TimeField(auto_now=False)
+  current_date = models.DateField(auto_now=True)
+  

@@ -1,25 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
 
 body {
-  background-color: #efefef;
   font-family: 'Muli', Tahoma,'Segoe UI', Geneva, Verdana, sans-serif;
-}
-.navbar {
-  background-color: black;
+  background-color: #f8f8f8
+  /* background-color: #4b5361 */
 }
 
-.nav-wrapper {
-  background-color: navy;
-  padding: 0% 2% 1% 2%;
-  font-weight: bold;
+.card {  
+  border: 1px solid gray;
+  border-radius: .5rem;
+  text-align: center;
+}
+
+/* .card-body {
+  display: flex;
+  align-items: center;
+} */
+
+.navbar {
+  background-color: #f8f8f8;
+  height: 20%;
+}
+
+.nav-link {
   color: black;
 }
 
-.login-title {
-  text-align: center;
+nav li {
+  list-style: none;
 }
-  
-.card-content {
-  margin: 3%;
+ 
+.form-control {
+  border: 1px solid gray;
+}
+
+.btn {
+  background-color: #ff3744;
+  border: 1px solid #d9dad3;
+  border-radius: .5rem
 }
 

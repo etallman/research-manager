@@ -46,58 +46,57 @@ export class Register extends Component {
     const { username, email, password, password_confirm } = this.state;
 
     return (
-      <div className="col-md-6 m-auto">
-        <div className="card card-body mt-5 z-depth-2">
-          <h2 className="text-center">Register</h2>
+      <div className="col-md-5 m-auto">
+        <div className="card card-body mt-5 p-3 shadow">
+          <h2 className="register-header">Register</h2>
           <form onSubmit={this.onSubmit}>
-            <div className="form-group">
-              <label>Username</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  name="username"
-                  onChange={this.onChange}
-                  value={username}
-                  />
+            <div className="form-group m-4">
+              <input
+                type="text"
+                placeholder="Choose a username"
+                className="form-control"
+                name="username"
+                onChange={this.onChange}
+                value={username}
+              />
             </div>
-            <div className="form-group">
-              <label>Email</label>
-                <input
-                  type="email"
-                  className="form-control"
-                  name="email"
-                  onChange={this.onChange}
-                  value={email}
-                  />
+            <div className="form-group m-4">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="form-control"
+                name="email"
+                onChange={this.onChange}
+                value={email}
+              />
             </div>
-            <div className="form-group">
-              <label>Password</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  name="password"
-                  onChange={this.onChange}
-                  value={password}
-                  />
+            <div className="form-group m-4">
+              <input
+                type="password"
+                placeholder="Choose a password (at least 10 characters)"
+                className="form-control"
+                name="password"
+                onChange={this.onChange}
+                value={password}
+              />
             </div>
-            <div className="form-group">
-              <label>Confirm Password</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  name="password_confirm"
-                  onChange={this.onChange}
-                  value={password_confirm}
-                  />
+            <div className="form-group m-4">
+              <input
+                type="password"
+                placeholder="Enter password to confirm"
+                className="form-control"
+                name="password_confirm"
+                onChange={this.onChange}
+                value={password_confirm}
+              />
             </div>
             <div className="form-group">
               <button type="submit" className="btn btn-primary">
                 Sign Up
               </button>
             </div>
-            <p>
-              Already have an account? <Link to="/login">Login</Link>
-            </p>
+            <p>Already have an account?</p>
+            <Link to="/login">Login Here</Link>
           </form>
         </div>
       </div>

@@ -32,24 +32,24 @@ export class Login extends Component {
     const { username, password } = this.state;
 
     return (
-      <div className="col-md-6 m-auto">
-        <div className="card card-body mt-5">
-          <h2 className="text-center">Log In</h2>
+      <div className="col-md-5 m-auto ">
+        <div className="card card-body mt-5 p-3 shadow">
+          <h2 className="login-header">Log In</h2>
           <form onSubmit={this.onSubmit}>
-            <div className="form-group">
-              <label>Username</label>
+            <div className="form-group m-4">
                 <input
                   type="text"
+                  placeholder="Enter your username"
                   className="form-control"
                   name="username"
                   onChange={this.onChange}
                   value={username}
                   />
             </div>
-            <div className="form-group">
-              <label>Password</label>
+            <div className="form-group m-4">
                 <input
                   type="password"
+                  placeholder="Enter your password"
                   className="form-control"
                   name="password"
                   onChange={this.onChange}

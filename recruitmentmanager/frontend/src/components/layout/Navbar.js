@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
 
-export class Header extends Component {
+export class Navbar extends Component {
 
   static propTypes =  {
     auth: PropTypes.object.isRequired,
@@ -17,8 +17,18 @@ export class Header extends Component {
     const authLinks = (
       <ul className="navbar-nav mr-auto">
         <span className="navbar-text mr-3">
-          <strong>{user ? `Welcome ${user.username}`: ''}</strong>
+          <strong>{user ? `Welcome ${user.username.toUpperCase()}`: ''}</strong>
         </span>
+        <li className="nav-item">
+          <Link to="/recruits" className="nav-link">
+            Recruitment List
+            </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/recruits/form" className="nav-link">
+            Add Potential Participant
+            </Link>
+        </li>
         <li className="nav-item">
           <button 
           onClick={this.props.logout}
@@ -29,8 +39,8 @@ export class Header extends Component {
       </ul>
     )
     const guestLinks = (
-      <ul className="nav nav-tabs mr-auto">
-        <li className="nav-item">
+      <ul className="navbar-nav mr-auto p-2">
+        <li className="nav-item active">
           <Link to="/login" className="nav-link">
             Login
             </Link>
@@ -45,8 +55,9 @@ export class Header extends Component {
 
     return (
 
-      <nav className="navbar navbar-expand-lg navbar-light bg-light"> 
-        <div className="container">
+      <nav className="navbar-nav navbar-expand-lg">  
+        <a className="navbar-brand" href="/">Clinical Research Manager</a>
+        <div className="container justify-content-end">          
           <button 
             className="navbar-toggler" 
             type="button" 
@@ -58,9 +69,7 @@ export class Header extends Component {
           >
           <span className="navbar-toggler-icon" />
           </button>
-        <div>
-          <a className="navbar-brand" href="#">Research Manager</a>
-        </div>
+
           {isAuthenticated ? authLinks : guestLinks}
       </div>
     </nav>
@@ -72,4 +81,4 @@ const mapStateToProps = (state) => ({
   auth: state.auth
 })
 
-export default connect(mapStateToProps, { logout })(Header);
+export default connect(mapStateToProps, { logout })(Navbar);

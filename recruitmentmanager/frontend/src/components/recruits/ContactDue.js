@@ -7,7 +7,6 @@ export class Recruits extends Component {
   static propTypes = {
     recruits: PropTypes.array.isRequired,
     getRecruits: PropTypes.func.isRequired,
-    deleteRecruit: PropTypes.func.isRequired
   }
 
   componentDidMount() {
@@ -17,7 +16,7 @@ export class Recruits extends Component {
   render() {
     return (
       <Fragment>
-        <h2 className='recruits-header m-5'>Potential Study Recruits</h2>
+        <h2>Potential Study Recruits</h2>
         <table className="table table-hover">
           <thead className="thead-dark">
             <tr>
@@ -27,27 +26,22 @@ export class Recruits extends Component {
               <th>Email</th>
               <th>Phone</th>
               <th>Notes</th>
-              <th>Delete Potential Participant</th>
               <th/>
             </tr>
           </thead>
           <tbody>
             {this.props.recruits.map((recruit) => (
-            <tr key={recruit.id}>
-              <td>{recruit.id}</td>
-              <td>{recruit.first_name}</td>
-              <td>{recruit.last_name}</td>
-              <td>{recruit.email}</td>
-              <td>{recruit.phone_number}</td>
-              <td>{recruit.notes}</td>
-              <td>
-                <button onClick={this.props.deleteRecruit.bind(this, recruit.id)} className="btn btn-danger btn-sm">
-                  {''}
-                  Delete
-                </button>
-                </td>
-            </tr>
-            ))}
+             <tr key={recruit.id}>
+               <td>{recruit.id}</td>
+               <td>{recruit.first_name}</td>
+               <td>{recruit.last_name}</td>
+               <td>{recruit.email}</td>
+               <td>{recruit.phone_number}</td>
+               <td>{recruit.notes}</td>
+               <td>
+               </td>
+             </tr>
+             ))}
           </tbody>
         </table>
       </Fragment>
